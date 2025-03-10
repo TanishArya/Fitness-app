@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fitness/styles.css">
+    <title>Nutrition List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Nutrition</h1>
+        <a href="{% url 'add_nutrition' %}">Add Nutrition</a>
+        <ul>
+            {% for entry in nutrition_entries %}
+                <li>{{ entry.date }}: {{ entry.food_item }} - {{ entry.calories }} calories</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
